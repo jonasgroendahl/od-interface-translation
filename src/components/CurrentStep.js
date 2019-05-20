@@ -3,6 +3,8 @@ import { Typography, Card, CardContent, TextField, Button, CircularProgress } fr
 import steps, { URL } from "../utils/vars";
 import { Check } from "@material-ui/icons";
 
+// test commit
+
 export default function CurrentStep({ activeStep, setTranslation, translations, lang }) {
   const [loading, setLoading] = useState(0);
 
