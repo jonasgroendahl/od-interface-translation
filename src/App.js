@@ -8,7 +8,7 @@ import LanguageSelector from "./components/LanguageSelector";
 
 const styles = {
   grid: {
-    gridTemplateColumns: "300px 1fr 1fr",
+    gridTemplateColumns: "300px 30% 1fr",
     display: "grid",
     gridGap: "10px",
     padding: 20
