@@ -65,8 +65,12 @@ export default function CurrentStep({ activeStep, setTranslation, translations, 
         </div>
         <div>
           <Card>
-            <CardContent>
-              {!loading ? <img src={step.image} height={600} onLoad={() => console.log("Loaded...!") || setLoading(false)} /> : <CircularProgress />}
+            <CardContent style={{ textAlign: "center" }}>
+              {!loading ? (
+                <img src={step.image} height={600} style={{ width: "100%" }} onLoad={() => console.log("Loaded...!") || setLoading(true)} />
+              ) : (
+                <CircularProgress />
+              )}
             </CardContent>
           </Card>
         </div>
