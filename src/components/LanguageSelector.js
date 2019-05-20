@@ -18,8 +18,14 @@ export default function LanguageSelector(props) {
     setOpen(false);
   }
 
+  function handleClose() {
+    if (lang) {
+      setOpen(false);
+    }
+  }
+
   return (
-    <Dialog open={open} onClose={() => setOpen(false)}>
+    <Dialog open={open} onClose={handleClose}>
       <DialogContent>
         <Typography variant="body1">Choose a language you want to translate to.</Typography>
         <Select native value={lang} onChange={handleChange}>

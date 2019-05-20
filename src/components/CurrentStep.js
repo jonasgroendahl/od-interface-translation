@@ -1,9 +1,11 @@
-import React from "react";
-import { Typography, Card, CardContent, TextField, Button } from "@material-ui/core";
+import React, { useState } from "react";
+import { Typography, Card, CardContent, TextField, Button, CircularProgress } from "@material-ui/core";
 import steps, { URL } from "../utils/vars";
 import { Check } from "@material-ui/icons";
 
 export default function CurrentStep({ activeStep, setTranslation, translations, lang }) {
+  const [loading, setLoading] = useState(0);
+
   function handleChange(e) {
     const newTranslation = [...translations];
     newTranslation[activeStep][e.target.name] = e.target.value;
@@ -64,7 +66,7 @@ export default function CurrentStep({ activeStep, setTranslation, translations, 
         <div>
           <Card>
             <CardContent>
-              <img src={step.image} height={600} />
+              {!loading ? <img src={step.image} height={600} onLoad={() => console.log("Loaded...!") || setLoading(false)} /> : <CircularProgress />}
             </CardContent>
           </Card>
         </div>
