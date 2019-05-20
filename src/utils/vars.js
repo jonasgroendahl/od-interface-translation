@@ -7,7 +7,7 @@ import sc6 from "../assets/Screenshot from 2019-05-20 10-18-36.png";
 import sc7 from "../assets/Screenshot from 2019-05-20 10-18-47.png";
 import sc8 from "../assets/Screenshot from 2019-05-20 10-24-43.png";
 
-export const URL = process.env.NODE_ENV === "development" ? "http://localhost:3001/v3/translation" : "http://wexer-api.herokuapp.com/v3/translation";
+export const URL = process.env.NODE_ENV === "development" ? "http://localhost:3001/v3/translation" : "https://api-wexer.herokuapp.com/v3/translation";
 
 const steps = [
   {
