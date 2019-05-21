@@ -6,24 +6,19 @@ export default function LanguageSelector(props) {
   const { lang, setLang, open, setOpen, setTranslations } = props;
 
   function handleChange(e) {
-    console.log("handleChange", e.target.value);
     setLang(e.target.value);
     fetch(`${URL}?country_code=${e.target.value}`)
       .then(res => res.json())
       .then(data => {
         const dataQ = JSON.parse(data);
-        console.log(dataQ);
-
-        // set default
 
         const translationStateCopy = [...translationState];
 
+        // take the skeleton of the translation object and fill out valid from DB
         translationStateCopy.forEach((el, index) => {
-          //console.log(el);
           const keys = Object.keys(el);
           keys.forEach(key => {
             const exist = dataQ[index] && dataQ[index][key];
-            console.log(exist);
             if (exist) {
               el[key] = dataQ[index][key];
             }
@@ -49,17 +44,17 @@ export default function LanguageSelector(props) {
           <option disabled value="">
             Select language
           </option>
-          <option>DA</option>
-          <option>DE</option>
-          <option>NL</option>
-          <option>ES</option>
-          <option>IT</option>
-          <option>FR</option>
-          <option>PL</option>
-          <option>FI</option>
-          <option>SE</option>
-          <option>CN</option>
-          <option>JA</option>
+          <option value="DA">Danish</option>
+          <option value="DE">German</option>
+          <option value="NL">Dutch</option>
+          <option value="ES">Spanish</option>
+          <option value="IT">Italian</option>
+          <option value="FR">French</option>
+          <option value="PL">Polish</option>
+          <option value="FI">Finnish</option>
+          <option value="SE">Swedish</option>
+          <option value="CN">Chinese</option>
+          <option value="JA">Japanese</option>
         </Select>
       </DialogContent>
     </Dialog>

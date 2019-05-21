@@ -7,7 +7,7 @@ export default function Stepperino(props) {
 
   return (
     <Drawer variant="permanent" orientation="left">
-      <Typography variant="body1" style={{ marginTop: 10, textAlign: "center" }} onClick={() => setOpen(true)}>
+      <Typography variant="body1" style={{ marginTop: 10, textAlign: "center", cursor: "pointer" }} onClick={() => setOpen(true)}>
         {lang}
       </Typography>
       <Stepper activeStep={step} orientation="vertical">

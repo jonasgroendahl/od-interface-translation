@@ -11,12 +11,9 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
     const newTranslation = [...translations];
     newTranslation[activeStep][e.target.name] = e.target.value;
     setTranslation(newTranslation);
-    console.log(newTranslation);
   }
 
   const step = steps[activeStep];
-
-  console.log("step", step, activeStep, translations);
 
   const fields = Object.keys(step.fields).map(field => {
     let longname = false;
@@ -52,7 +49,7 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
         <Card>
           <CardContent style={{ textAlign: "center" }}>
             {!loading ? (
-              <img src={step.image} height={600} style={{ width: "100%" }} onLoad={() => console.log("Loaded...!") || setLoading(false)} />
+              <img src={step.image} height={600} style={{ width: "100%" }} alt="" onLoad={() => setLoading(false)} />
             ) : (
               <CircularProgress />
             )}
@@ -63,7 +60,7 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
             step.extras.map(extra => (
               <Card style={{ marginRight: 10 }}>
                 <CardContent style={{ textAlign: "center" }}>
-                  <img src={extra} height={150} style={{ width: "100%", objectFit: "contain" }} />
+                  <img src={extra} height={150} style={{ width: "100%", objectFit: "contain" }} alt="" />
                 </CardContent>
               </Card>
             ))}

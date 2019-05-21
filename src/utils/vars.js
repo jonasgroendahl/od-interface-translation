@@ -265,7 +265,7 @@ const steps = [
       description2: "Choose FLOOR MODE for on floor exercises. BODY BIKE will not show any data on screen when not in BIKE MODE.",
       title: "Welcome to Body Bike. Select your training mode to continue. ",
       btn: "Go",
-      title: "Ride complete",
+      title_ride: "Ride complete", // TODO when applying mapping in App
       description: "See your ride summary below. Scan the QR code on your phone to save your workout and sync with Strava.",
       cooldownTitle: "Cool down routines",
       cooldownDescription: "Switch the BODY BIKE 360 into Floor mode and try a cool down routine.",
@@ -279,7 +279,6 @@ export const translationState = steps.map(step => {
     acc[field] = "";
     return acc;
   }, {});
-  console.log(fields);
   return fields;
 });
 

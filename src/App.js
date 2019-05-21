@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Stepper from "./components/Stepper";
 import { withStyles, MuiThemeProvider, CssBaseline } from "@material-ui/core";
 import theme from "./utils/theme";

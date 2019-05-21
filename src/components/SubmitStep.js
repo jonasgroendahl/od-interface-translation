@@ -4,7 +4,6 @@ import { Check } from "@material-ui/icons";
 
 export default function SubmitStep({ translations, lang }) {
   async function submit() {
-    console.log(translations);
     await fetch(URL, {
       method: "POST",
       body: JSON.stringify({
