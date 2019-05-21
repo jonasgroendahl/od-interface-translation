@@ -16,7 +16,7 @@ export default function Stepperino(props) {
             <StepLabel style={{ cursor: "pointer" }}>{step.text}</StepLabel>
           </Step>
         ))}
-        <Step onClick={() => setStep(8)}>
+        <Step onClick={() => setStep(steps.length)}>
           <StepLabel style={{ cursor: "pointer" }}>Submit translation</StepLabel>
         </Step>
       </Stepper>
