@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Typography, Card, CardContent, TextField, CircularProgress } from "@material-ui/core";
+import { Typography, Card, CardContent, TextField, CircularProgress, Dialog } from "@material-ui/core";
 import steps from "../utils/vars";
 
 // test commit
 
 export default function CurrentStep({ activeStep, setTranslation, translations }) {
   const [loading, setLoading] = useState(0);
+  const [showFullScreen, setShowFullScreen] = useState(false);
 
   function handleChange(e) {
     const newTranslation = [...translations];
@@ -49,7 +50,14 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
         <Card>
           <CardContent style={{ textAlign: "center" }}>
             {!loading ? (
-              <img src={step.image} height={600} style={{ width: "100%" }} alt="" onLoad={() => setLoading(false)} />
+              <img
+                src={step.image}
+                height={600}
+                style={{ width: "100%", objectFit: "contain" }}
+                alt=""
+                onLoad={() => setLoading(false)}
+                onClick={() => setShowFullScreen(true)}
+              />
             ) : (
               <CircularProgress />
             )}
@@ -65,6 +73,15 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
               </Card>
             ))}
         </div>
+        <Dialog open={showFullScreen} onClose={() => setShowFullScreen(false)} maxWidth="lg">
+          <img
+            src={step.image}
+            style={{ width: "100%", objectFit: "contain" }}
+            alt=""
+            onLoad={() => setLoading(false)}
+            onClick={() => setShowFullScreen(true)}
+          />
+        </Dialog>
       </div>
     </>
   );
