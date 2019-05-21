@@ -53,7 +53,7 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
               <img
                 src={step.image}
                 height={600}
-                style={{ width: "100%", objectFit: "contain" }}
+                style={{ width: "100%", objectFit: "contain", height: "auto" }}
                 alt=""
                 onLoad={() => setLoading(false)}
                 onClick={() => setShowFullScreen(true)}
