@@ -11,7 +11,7 @@ const styles = {
   grid: {
     gridTemplateColumns: "350px 25% 1fr",
     display: "grid",
-    gridGap: "10px",
+    gridGap: "20px",
     padding: 20
   }
 };

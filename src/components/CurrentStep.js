@@ -1,10 +1,35 @@
 import React, { useState } from "react";
-import { Typography, Card, CardContent, TextField, CircularProgress, Dialog } from "@material-ui/core";
+import { Typography, Card, CardContent, TextField, CircularProgress, Dialog, withStyles } from "@material-ui/core";
 import steps from "../utils/vars";
 
 // test commit
 
-export default function CurrentStep({ activeStep, setTranslation, translations }) {
+const styles = {
+  flex: {
+    display: "flex",
+    "& span": {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-start",
+      flex: 1
+    },
+    "& > div": {
+      width: 200
+    }
+  },
+  img: {
+    width: "100%",
+    objectFit: "contain",
+    height: "auto"
+  },
+  card: {
+    marginBottom: 10
+  }
+};
+
+function CurrentStep(props) {
+  const { activeStep, setTranslation, translations, classes } = props;
+
   const [loading, setLoading] = useState(0);
   const [showFullScreen, setShowFullScreen] = useState(false);
 
@@ -16,13 +41,13 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
 
   const step = steps[activeStep];
 
-  const fields = Object.keys(step.fields).map(field => {
+  const fields = Object.keys(step.fields).map((field, index) => {
     let longname = false;
     if (step.fields[field].length > 30) {
       longname = true;
     }
     return (
-      <div>
+      <div className={classes.flex}>
         <Typography variant="caption">{steps[activeStep].fields[field]}</Typography>
         <TextField
           key={field}
@@ -32,7 +57,8 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
           multiline={longname}
           rows={5}
           variant="outlined"
-          margin="dense"
+          margin="normal"
+          label={`Field ${index + 1}`}
         />
       </div>
     );
@@ -47,22 +73,13 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
         <div style={{ display: "flex", flexDirection: "column" }}>{fields}</div>
       </div>
       <div>
-        <Card>
-          <CardContent style={{ textAlign: "center" }}>
-            {!loading ? (
-              <img
-                src={step.image}
-                height={600}
-                style={{ width: "100%", objectFit: "contain", height: "auto" }}
-                alt=""
-                onLoad={() => setLoading(false)}
-                onClick={() => setShowFullScreen(true)}
-              />
-            ) : (
-              <CircularProgress />
-            )}
-          </CardContent>
-        </Card>
+        {step.image.map(img => (
+          <Card className={classes.card}>
+            <CardContent style={{ textAlign: "center" }}>
+              <img src={img} height={400} className={classes.img} alt="" onLoad={() => setLoading(false)} onClick={() => setShowFullScreen(img)} />
+            </CardContent>
+          </Card>
+        ))}
         <div style={{ display: "flex", marginTop: 10 }}>
           {step.extras &&
             step.extras.map(extra => (
@@ -73,9 +90,9 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
               </Card>
             ))}
         </div>
-        <Dialog open={showFullScreen} onClose={() => setShowFullScreen(false)} maxWidth="lg">
+        <Dialog open={Boolean(showFullScreen)} onClose={() => setShowFullScreen(null)} maxWidth="lg">
           <img
-            src={step.image}
+            src={showFullScreen}
             style={{ width: "100%", objectFit: "contain" }}
             alt=""
             onLoad={() => setLoading(false)}
@@ -86,3 +103,5 @@ export default function CurrentStep({ activeStep, setTranslation, translations }
     </>
   );
 }
+
+export default withStyles(styles)(CurrentStep);

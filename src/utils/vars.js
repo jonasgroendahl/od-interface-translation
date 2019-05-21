@@ -11,32 +11,109 @@ import sc10 from "../assets/Screenshot from 2019-05-20 10-33-45.png";
 import sc11 from "../assets/Screenshot from 2019-05-20 10-38-43.png";
 import sc12 from "../assets/Screenshot from 2019-05-20 10-39-31.png";
 import sc13 from "../assets/Screenshot from 2019-05-21 08-48-50.png";
+import ss_dialog_override from "../assets/Screenshot from 2019-05-21 15-17-51.png";
 
 import ex1 from "../assets/home_extra_1.png";
 import ex2 from "../assets/home_extra_2.png";
 import ex3 from "../assets/class_detail_extra_1.jpg";
+
+import slide_home from "../assets/slides/Slide1.PNG";
+import slide_home_expanded from "../assets/slides/Slide2.PNG";
+import slide_schedule from "../assets/slides/Slide3.PNG";
+import slide_classdetail from "../assets/slides/Slide4.PNG";
+import slide_classdetail_playing from "../assets/slides/Slide5.PNG";
+import slide_classdetail_scrolled from "../assets/slides/Slide6.PNG";
+import slide_cd_dialog from "../assets/slides/Slide7.PNG";
+import slide_language from "../assets/slides/Slide8.PNG";
+import slide_search from "../assets/slides/Slide9.PNG";
+import slide_search_tab_2 from "../assets/slides/Slide10.PNG";
+import slide_admin_tab_3 from "../assets/slides/Slide11.PNG";
+import slide_admin_tab_2 from "../assets/slides/Slide12.PNG";
 
 export const URL = process.env.NODE_ENV === "development" ? "http://localhost:3001/v3/translation" : "https://api-wexer.herokuapp.com/v3/translation";
 
 const steps = [
   {
     text: "Home screen",
-    image: sc1,
+    image: [slide_home, slide_home_expanded],
     fields: {
       description: "Welcome to the Virtual Player. Choose from hundreds of classes. Touch an option to get started.",
       btn1: "Explore",
       btn2: "View schedule",
       btn3: "Search",
       currentClass: "Now playing",
+      viewAll: "View all",
+      featuredTitle: "Featured",
+      newestTitle: "Newest",
+      popularTitle: "Most popular",
       nextClass: "Next up",
-      countdown: "Workout starting in",
-      viewAll: "View all"
+      countdown: "Workout starting in"
     },
     extras: [ex1, ex2]
   },
   {
+    text: "Schedule",
+    image: [slide_schedule],
+    fields: {
+      title: "Schedule",
+      virtual: "Virtual",
+      stream: "Stream",
+      zoom: "Zoom",
+      go: "Go"
+    },
+    extras: []
+  },
+  {
+    text: "Class detail page",
+    image: [slide_classdetail, slide_classdetail_playing, slide_classdetail_scrolled],
+    fields: {
+      playBtn: "Play",
+      qr: "Do this class at home: scan code & save for later",
+      duration: "Duration",
+      type: "Type",
+      level: "Level",
+      provider: "Provider",
+      trainer: "Trainer",
+      equipment: "Equipment",
+      relatedContent: "Related content",
+      stopBtn: "Stop",
+      pauseBtn: "Pause",
+      unpauseBtn: "Resume",
+      more: "More"
+    }
+  },
+  {
+    text: "Class detail page - dialog",
+    image: [slide_cd_dialog, ss_dialog_override],
+    fields: {
+      title: "Class playing",
+      prompt: "Are you sure that you would like to cancel ongoing class?",
+      alert: "Please wait for the current class to finish before starting a new one.",
+      adminOverwrite: "Admin override",
+      ok: "Ok",
+      cancel: "Cancel"
+    },
+    extras: []
+  },
+  {
+    text: "Class detail page - dialog passcode",
+    image: [sc10],
+    fields: {
+      passcode: "Enter passcode",
+      delete: "Delete"
+    }
+  },
+  {
+    text: "Class detail page - dialog upcoming class",
+    image: [sc11],
+    fields: {
+      scheduledClassMessage:
+        "There's an up and coming scheduled class which will interfere with the class, that you're currently trying to play, when it reaches the scheduled time."
+    }
+  },
+  {
     text: "Search page - main tab",
-    image: sc2,
+    image: [sc2],
     fields: {
       btn1: "Category filter",
       btn2: "Search",
@@ -65,7 +142,7 @@ const steps = [
   },
   {
     text: "Search page - search tab",
-    image: sc3,
+    image: [sc3],
     fields: {
       searchPlaceholder: "Tap to search by name, category or tags",
       keyboardSpace: "Space",
@@ -74,14 +151,14 @@ const steps = [
   },
   {
     text: "Home screen - language dialog",
-    image: sc4,
+    image: [slide_language],
     fields: {
       title: "Choose your language"
     }
   },
   {
     text: "Admin",
-    image: sc5,
+    image: [slide_admin_tab_2],
     fields: {
       title: "Admin",
       tab1: "General",
@@ -95,8 +172,8 @@ const steps = [
     }
   },
   {
-    text: "Admin - Add On tab",
-    image: sc6,
+    text: "Admin - Add on tab",
+    image: [slide_admin_tab_3],
     fields: {
       ic: "Launch",
       moto1: "Show tiles",
@@ -104,68 +181,8 @@ const steps = [
     }
   },
   {
-    text: "Schedule",
-    image: sc7,
-    fields: {
-      title: "Schedule",
-      virtual: "Virtual",
-      stream: "Stream"
-    },
-    extras: []
-  },
-  {
-    text: "Class detail page",
-    image: sc8,
-    fields: {
-      playBtn: "Play",
-      stopBtn: "Stop",
-      pauseBtn: "Pause",
-      unpauseBtn: "Resume",
-      qr: "Do this class at home: scan code & save for later",
-      relatedContent: "Related content",
-      duration: "Duration",
-      type: "Type",
-      level: "Level",
-      provider: "Provider",
-      trainer: "Trainer",
-      equipment: "Equipment",
-      more: "More"
-    },
-    extras: [ex3]
-  },
-  {
-    text: "Class detail page - dialog",
-    image: sc9,
-    fields: {
-      title: "Class playing",
-      prompt: "Are you sure that you would like to cancel ongoing class?",
-      alert: "Please wait for the current class to finish before starting a new one.",
-      adminOverwrite: "Admin override",
-      confirm: "Confirm"
-    },
-    extras: []
-  },
-  {
-    text: "Class detail page - dialog passcode",
-    image: sc10,
-    fields: {
-      passcode: "Enter passcode",
-      cancel: "Cancel",
-      ok: "Ok",
-      delete: "Delete"
-    }
-  },
-  {
-    text: "Class detil page - dialog upcoming class",
-    image: sc11,
-    fields: {
-      scheduledClassMessage:
-        "There's an up and coming scheduled class which will interfere with the class, that you're currently trying to play, when it reaches the scheduled time."
-    }
-  },
-  {
     text: "Class not found page",
-    image: sc12,
+    image: [sc12],
     fields: {
       errorBtn: "Back to home screen",
       errorText: "The class you attempted to view is currently not downloaded onto the player yet",
@@ -174,7 +191,7 @@ const steps = [
   },
   {
     text: "Tags",
-    image: sc13,
+    image: [sc13],
     fields: {
       short: "Short",
       high: "High",
@@ -257,7 +274,7 @@ const steps = [
   },
   {
     text: "Extras",
-    image: "https://pngimage.net/wp-content/uploads/2018/05/extra-extra-png-1.png",
+    image: ["https://pngimage.net/wp-content/uploads/2018/05/extra-extra-png-1.png"],
     fields: {
       relatedByCategory: "Related content by category",
       relatedByProvider: "Related content by provider",
