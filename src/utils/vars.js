@@ -107,8 +107,7 @@ const steps = [
     text: "Class detail page - dialog upcoming class",
     image: [sc11],
     fields: {
-      scheduledClassMessage:
-        "There's an up and coming scheduled class which will interfere with the class, that you're currently trying to play, when it reaches the scheduled time."
+      scheduledClassMessage: "Selection conflicts with a scheduled class. Your class will play, but will be interrupted by the scheduled class"
     }
   },
   {
@@ -189,6 +188,7 @@ const steps = [
       errorText2: "Try again later"
     }
   },
+  /*
   {
     text: "Tags",
     image: [sc13],
@@ -271,7 +271,7 @@ const steps = [
       prenatal: "Pre natal",
       postnatal: "Post natal"
     }
-  },
+  },*/
   {
     text: "Extras",
     image: ["https://pngimage.net/wp-content/uploads/2018/05/extra-extra-png-1.png"],
@@ -286,7 +286,19 @@ const steps = [
       description: "See your ride summary below. Scan the QR code on your phone to save your workout and sync with Strava.",
       cooldownTitle: "Cool down routines",
       cooldownDescription: "Switch the BODY BIKE 360 into Floor mode and try a cool down routine.",
-      bikemode: "Just ride"
+      bikemode: "Just ride",
+      title_setupbodybike: "Setup your ride",
+      description_setupbodybike: "Input your data so BODY BIKE can calculate your calorie burn",
+      select1: "Gender",
+      select2: "Next",
+      select3: "Weight (kilograms)",
+      select4: "Height (cm)",
+      male: "Male",
+      female: "Female",
+      btn1: "Back",
+      btn2: "Skip",
+      btn3: "Back to main menu",
+      next: "Next"
     }
   }
 ];
