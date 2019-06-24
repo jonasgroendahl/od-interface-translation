@@ -1,10 +1,8 @@
 import ex1 from "../assets/home_extra_1.png";
 import ex2 from "../assets/home_extra_2.png";
-import ex3 from "../assets/class_detail_extra_1.jpg";
 
 import slide_home from "../assets/slides/Slide1.PNG";
 import slide_home_expanded from "../assets/slides/Slide2.PNG";
-import slide_not_found from "../assets/slides/Slide3.PNG";
 import slide_schedule from "../assets/slides/Slide4.PNG";
 import slide_classdetail from "../assets/slides/Slide5.PNG";
 import slide_classdetail_playing from "../assets/slides/Slide6.PNG";
@@ -56,9 +54,10 @@ const steps = [
     text: "Class not found page",
     image: [not_found],
     fields: {
-      errorBtn: "Back to home screen",
+      notFound: "Not found",
       errorText: "The class you attempted to view is currently not downloaded onto the player yet",
-      errorText2: "Try again later"
+      errorText2: "Try again later",
+      errorBtn: "Back to home screen"
     }
   },
   {
@@ -67,6 +66,7 @@ const steps = [
     fields: {
       title: "Schedule",
       virtual: "Virtual",
+      live: "Live",
       stream: "Stream",
       zoom: "Zoom",
       go: "Go"
@@ -82,8 +82,8 @@ const steps = [
       duration: "Duration",
       type: "Type",
       level: "Level",
-      provider: "Provider",
       trainer: "Trainer",
+      provider: "Provider",
       equipment: "Equipment",
       relatedContent: "Related content",
       stopBtn: "Stop",
@@ -117,7 +117,9 @@ const steps = [
     text: "Class detail page - dialog upcoming class",
     image: [slide_classdetail_dialog_scheduled],
     fields: {
-      scheduledClassMessage: "Selection conflicts with a scheduled class. Your class will play, but will be interrupted by the scheduled class"
+      scheduledClassMessage: "Selection conflicts with a scheduled class. Your class will play, but will be interrupted by the scheduled class",
+      confirm: "Confirm",
+      cancel: "Cancel"
     }
   },
   {
@@ -134,26 +136,19 @@ const steps = [
       btn1: "Category filter",
       btn2: "Search",
       btn3: "Content Providers",
-      noResults: "No results found",
-      results: "Results",
-      beginner: "Beginner",
-      intermediate: "Intermediate",
-      advanced: "Advanced",
-      cycling: "Cycling",
-      kids: "Kids",
-      senior: "Senior",
-      conditioning: "Conditioning",
-      "mind / body": "Mind & Body",
-      cardio: "Cardio",
-      rehab: "Rehab",
-      live: "Live",
-      intro: "Intro",
-      "not set": "Not set",
-      "for everyone": "For everyone",
       "10 min": "10 min",
       "20 min": "20 min",
       "30 min": "30 min",
-      "40+ min": "40+ min"
+      "40+ min": "40+ min",
+      cardio: "Cardio",
+      conditioning: "Conditioning",
+      "mind / body": "Mind & Body",
+      cycling: "Cycling",
+      beginner: "Beginner",
+      intermediate: "Intermediate",
+      advanced: "Advanced",
+      results: "Results",
+      noResults: "No results found"
     }
   },
   {
@@ -169,104 +164,20 @@ const steps = [
     text: "Admin section",
     image: [a_tab3, a_tab1],
     fields: {
-      ic: "Launch",
-      moto1: "Show tiles",
-      moto2: "Hide tiles",
       title: "Admin",
       tab1: "General",
       tab2: "Advanced",
       tab3: "Add ons",
       club: "Club",
       playerId: "Player ID",
+      ic: "Launch",
+      moto1: "Show tiles",
+      moto2: "Hide tiles",
       opt1: "Player interface",
-      opt2: "Type",
-      opt3: "Volume"
+      opt3: "Volume",
+      opt2: "Numpad"
     }
   },
-  /*
-  {
-    text: "Tags",
-    image: [sc13],
-    fields: {
-      short: "Short",
-      high: "High",
-      bodyweight: "Bodyweight",
-      strength: "Strength",
-      functional: "Functional",
-      crossfit: "CrossFit",
-      quick: "Quick",
-      fast: "Fast",
-      express: "Express",
-      recovery: "Recovery",
-      agility: "Agility",
-      plyo: "Plyo",
-      sport: "Sport",
-      challenge: "Challenge",
-      fit: "Fit",
-      hit: "HIT",
-      cardio: "Cardio",
-      ballet: "Ballet",
-      combat: "Combat",
-      weight: "Weight Loss",
-      lean: "Lean",
-      musclebuilding: "Muscle Building",
-      strong: "Strong",
-      atletic: "Athletic",
-      burn: "Burn",
-      trim: "Trim",
-      endurance: "Endurance",
-      arms: "Arms",
-      legs: "Legs",
-      quads: "Quads",
-      biceps: "Biceps",
-      glutes: "Glutes",
-      shoulders: "Shoulders",
-      abs: "Abs",
-      triceps: "Tripceps",
-      step: "Step",
-      bench: "Bench",
-      box: "Box",
-      foamroller: "Foam Roller",
-      bands: "Bands",
-      weights: "Weights",
-      dumbbell: "Dumbbell",
-      barbell: "Barbell",
-      kettlebell: "Kettlebell",
-      bar: "Bar",
-      bike: "Bike",
-      cycle: "Cycle",
-      ride: "Ride",
-      sprint: "Sprint",
-      spin: "Spin",
-      spinning: "Spinning",
-      dance: "Dance",
-      calories: "Calories",
-      boxing: "Boxing",
-      yoga: "Yoga",
-      pilates: "Pilates",
-      stretch: "Stretch",
-      mobility: "Mobility",
-      spine: "Spine",
-      back: "Back",
-      flex: "Flex",
-      meditation: "Meditation",
-      holistic: "Holistic",
-      core: "Core",
-      squat: "Squat",
-      pump: "Pump",
-      bumstums: "Bums & tums",
-      tone: "Tone",
-      power: "Power",
-      kids: "Kids",
-      pregnant: "Pregnant",
-      martialarts: "Martial arts",
-      older: "Older",
-      fight: "Fight",
-      senior: "Senior",
-      prenatal: "Pre natal",
-      postnatal: "Post natal"
-    }
-  },*/
   {
     text: "Bodybike start screen",
     image: [b_start, b_start_2, b_start_3],
@@ -281,6 +192,7 @@ const steps = [
     text: "Bodybike main",
     image: [b_browse],
     fields: {
+      bikeModeOption: "BIKE MODE",
       bikemode: "Just ride"
     }
   },
@@ -291,33 +203,31 @@ const steps = [
       title_setupbodybike: "Setup your ride",
       description_setupbodybike: "Input your data so BODY BIKE can calculate your calorie burn",
       select1: "Gender",
-      select2: "Next",
-      select3: "Weight (kilograms)",
-      select4: "Height (cm)",
       male: "Male",
       female: "Female",
+      next: "Next",
       btn1: "Back",
       btn2: "Skip",
       btn3: "Back to main menu",
-      next: "Next"
+      select2: "Age",
+      select3: "Weight (kilograms)",
+      select4: "Height (cm)"
     }
   },
   {
     text: "Bodybike completed class",
-    image: [b_done], // missing 1 sc
+    image: [b_od_preparing, b_done], // missing 1 sc
     fields: {
+      splash: "Preparing your ride summary",
       title: "Ride complete", // TODO when applying mapping in App
       description: "See your ride summary below. Scan the QR code on your phone to save your workout and sync with Strava.",
-      cooldownTitle: "Cool down routines",
-      cooldownDescription: "Switch the BODY BIKE 360 into Floor mode and try a cool down routine."
+      done: "Done"
     }
   },
   {
-    text: "Extras",
-    image: ["https://pngimage.net/wp-content/uploads/2018/05/extra-extra-png-1.png", b_od_app, b_od_app_dialog, b_od_preparing],
+    text: "Wexer GF Bodybike overlay",
+    image: [b_od_app, b_od_app_dialog],
     fields: {
-      relatedByCategory: "Related content by category",
-      relatedByProvider: "Related content by provider",
       output: "Output",
       summary: "Summary",
       power: "Power (w)",
@@ -327,8 +237,23 @@ const steps = [
       distance: "Distance (km)",
       time: "Elapsed time",
       btn1: "End ride",
-      continue: "Continue",
-      splash: "Preparing your ride summary"
+      continue: "Continue"
+    }
+  },
+  {
+    text: "Extras",
+    image: ["https://pngimage.net/wp-content/uploads/2018/05/extra-extra-png-1.png"],
+    fields: {
+      relatedByCategory: "Related content by category",
+      relatedByProvider: "Related content by provider",
+      cooldownTitle: "Cool down routines",
+      cooldownDescription: "Switch the BODY BIKE 360 into Floor mode and try a cool down routine.",
+      kids: "Kids",
+      senior: "Senior",
+      rehab: "Rehab",
+      intro: "Intro",
+      "not set": "Not set",
+      "for everyone": "For everyone"
     }
   }
 ];
