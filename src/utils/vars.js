@@ -1,7 +1,7 @@
-import ex1 from "../assets/home_extra_1.png";
-import ex2 from "../assets/home_extra_2.png";
+import ex1 from "../assets/slides/Slide30.PNG";
+import ex2 from "../assets/slides/Slide31.PNG";
 
-import slide_home from "../assets/slides/Slide1.PNG";
+import slide_home from "../assets/slides/Slide1.png";
 import slide_home_expanded from "../assets/slides/Slide2.PNG";
 import slide_schedule from "../assets/slides/Slide4.PNG";
 import slide_classdetail from "../assets/slides/Slide5.PNG";
@@ -68,8 +68,8 @@ const steps = [
       virtual: "Virtual",
       live: "Live",
       stream: "Stream",
-      zoom: "Zoom",
-      go: "Go"
+      go: "Go",
+      zoom: "Zoom"
     },
     extras: []
   },
@@ -98,10 +98,10 @@ const steps = [
     fields: {
       title: "Class playing",
       prompt: "Are you sure that you would like to cancel ongoing class?",
-      alert: "Please wait for the current class to finish before starting a new one.",
-      adminOverwrite: "Admin override",
       ok: "Ok",
-      cancel: "Cancel"
+      cancel: "Cancel",
+      alert: "Please wait for the current class to finish before starting a new one.",
+      adminOverwrite: "Admin override"
     },
     extras: []
   },
@@ -231,10 +231,10 @@ const steps = [
       output: "Output",
       summary: "Summary",
       power: "Power (w)",
-      cadence: "Cadence (rpm)",
-      speed: "Speed (kmh)",
       calories: "Calories",
+      cadence: "Cadence (rpm)",
       distance: "Distance (km)",
+      speed: "Speed (kmh)",
       time: "Elapsed time",
       btn1: "End ride",
       continue: "Continue"

@@ -68,7 +68,7 @@ function CurrentStep(props) {
     <>
       <div>
         <Typography variant="body1" style={{ marginBottom: 15 }}>
-          Fill in the translation for each field. On the right you can see the context of the text that you're translating.
+          Fill in the translation for each field. On the right you can see the context of the text that you're translating. Case insensitive.
         </Typography>
         <div style={{ display: "flex", flexDirection: "column" }}>{fields}</div>
       </div>
