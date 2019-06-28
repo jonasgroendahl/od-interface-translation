@@ -29,6 +29,8 @@ import b_od_app_dialog from "../assets/slides/Slide27.PNG";
 import b_od_preparing from "../assets/slides/Slide28.PNG";
 import b_done from "../assets/slides/Slide29.PNG";
 
+import extra_ from "../assets/slides/extra_.png";
+
 export const URL = process.env.NODE_ENV === "development" ? "http://localhost:3001/v3/translation" : "https://api-wexer.herokuapp.com/v3/translation";
 
 const steps = [
@@ -161,6 +163,20 @@ const steps = [
     }
   },
   {
+    text: "Extra items",
+    image: [extra_],
+    fields: {
+      relatedByCategory: "Related content by category",
+      relatedByProvider: "Related content by provider",
+      kids: "Kids",
+      senior: "Senior",
+      rehab: "Rehab",
+      intro: "Intro",
+      "not set": "Not set",
+      "for everyone": "For everyone"
+    }
+  },
+  {
     text: "Admin section",
     image: [a_tab3, a_tab1],
     fields: {
@@ -241,19 +257,11 @@ const steps = [
     }
   },
   {
-    text: "Extras",
-    image: ["https://pngimage.net/wp-content/uploads/2018/05/extra-extra-png-1.png"],
+    text: "Bodybike cooldown",
+    image: [],
     fields: {
-      relatedByCategory: "Related content by category",
-      relatedByProvider: "Related content by provider",
       cooldownTitle: "Cool down routines",
-      cooldownDescription: "Switch the BODY BIKE 360 into Floor mode and try a cool down routine.",
-      kids: "Kids",
-      senior: "Senior",
-      rehab: "Rehab",
-      intro: "Intro",
-      "not set": "Not set",
-      "for everyone": "For everyone"
+      cooldownDescription: "Switch the BODY BIKE 180 into Floor mode and try a cool down routine."
     }
   }
 ];

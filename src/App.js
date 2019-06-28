@@ -6,6 +6,7 @@ import CurrentStep from "./components/CurrentStep";
 import steps, { translationState } from "./utils/vars";
 import LanguageSelector from "./components/LanguageSelector";
 import SubmitStep from "./components/SubmitStep";
+import "./index.css";
 
 const styles = {
   grid: {
@@ -44,13 +45,16 @@ function App({ classes }) {
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
       {!auth ? (
-        <TextField
-          onChange={e => {
-            if (e.target.value === "4G#gJ2DYn@") {
-              setAuth(true);
-            }
-          }}
-        />
+        <div className="centerMe">
+          <TextField
+            label="Password"
+            onChange={e => {
+              if (e.target.value === "4G#gJ2DYn@") {
+                setAuth(true);
+              }
+            }}
+          />
+        </div>
       ) : (
         <div className={classes.grid}>
           <LanguageSelector lang={lang} setLang={setLang} open={open} setOpen={setOpen} setTranslations={setTranslation} />
