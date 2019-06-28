@@ -51,6 +51,7 @@ export default function LanguageSelector(props) {
           <option value="IT">Italian</option>
           <option value="FR">French</option>
           <option value="PL">Polish</option>
+          <option value="CS">Czech</option>
           <option value="FI">Finnish</option>
           <option value="SE">Swedish</option>
           <option value="CN">Chinese</option>
