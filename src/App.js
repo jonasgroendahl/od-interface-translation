@@ -22,7 +22,7 @@ function App({ classes }) {
   const [translations, setTranslation] = useState([...translationState]);
   const [lang, setLang] = useState("");
   const [open, setOpen] = useState(true);
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(process.env.NODE_ENV === "development" ? true : false);
 
   function handleStepChange(value) {
     setActiveStep(value);

@@ -1,8 +1,13 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { Check } from "@material-ui/icons";
+import { URL } from "../utils/vars";
+import formatObject from "../utils/LangFile";
 
 export default function SubmitStep({ translations, lang }) {
+  const formattedTranslation = formatObject(translations);
+  console.log(formattedTranslation);
+
   async function submit() {
     await fetch(URL, {
       method: "POST",

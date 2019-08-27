@@ -39,6 +39,7 @@ const steps = [
     image: [slide_home, slide_home_expanded],
     fields: {
       description: "Welcome to the Virtual Player. Choose from hundreds of classes. Touch an option to get started.",
+      description_2: "Touch an option to get started",
       btn1: "Explore",
       btn2: "View schedule",
       btn3: "Search",
