@@ -12,7 +12,7 @@ export default function SubmitStep({ translations, lang }) {
     await fetch(URL, {
       method: "POST",
       body: JSON.stringify({
-        json: translations,
+        json: formattedTranslation,
         country_code: lang
       }),
       headers: {
